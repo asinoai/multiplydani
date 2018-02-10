@@ -2,7 +2,7 @@ var game = game || {};
 
 game.i18n = {
     title : "X ?",
-    successMessage : "Ügyes vagy Dani! :)",
+    successMessage : "Ügyes vagy! :)",
     failureMessage : "Sajnos ez nem jo... :("
 
 };

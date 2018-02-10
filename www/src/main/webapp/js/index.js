@@ -1,5 +1,8 @@
 var helloit = game || {};
 
+game.LEFT_NUMBERS = [2,4,5,8,10];
+game.RIGHT_NUMBERS = [2,3,4,5,6,7,8,9,10];
+
 game.createQuestionAnswerBar = function () {
     var content = game.createQuestion();
 
@@ -47,6 +50,12 @@ game.createMessageBar = function() {
 
 }
 
+game.createHistoryBar = function() {
+    var content = $('<div><div class="history-image"></div><div class="history-text"></div></div>');
+
+    return game.createCenteredContent(content);
+}
+
 game.updateWithAnswerDigit = function(digit) {
     var answer = $(".answer");
 
@@ -79,11 +88,27 @@ game.randomQuestion = function() {
     game.expectedAnswer = left * right;
 
     game.updateQuestion(left, right);
+    game.questionCount++;
 }
 
 
 game.updateMessage = function(content) {
     $(".message").html(content)
+}
+
+game.questionCount = 0;
+game.successCount = 0;
+
+game.updateHistory = function() {
+    var percent = 0;
+    if (game.questionCount > 0) {
+        percent = game.successCount * 100 / game.questionCount;
+    }
+
+    var pixel = 100 + 200 * percent / 100;
+
+    $(".history-image").attr("style", "width: "+pixel+"px;height: "+pixel+"px;");
+    $(".history-text").html(game.successCount + "/" + game.questionCount)
 }
 
 game.checkAnswer = function () {
@@ -95,10 +120,12 @@ game.checkAnswer = function () {
 
     if (ok) {
         window.setTimeout(game.nextQuestion, 2000);
+        game.successCount++;
     }
     else {
         answer.fadeOut('slow', function() {
             game.updateAnswer(game.expectedAnswer);
+            game.expectedAnswer = null;
             answer.fadeIn();
             window.setTimeout(game.nextQuestion, 5000);
         });
@@ -109,6 +136,7 @@ game.checkAnswer = function () {
 game.nextQuestion = function () {
     root = $(":root");
     root.fadeOut('slow', function() {
+        game.updateHistory();
         game.updateWithAnswerDigit();
         game.updateAnswer("");
         game.updateMessage("");

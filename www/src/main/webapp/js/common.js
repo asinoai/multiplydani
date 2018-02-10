@@ -3,8 +3,6 @@ var game = game || {};
 game.CONTACT_ANCHOR_TAG = "contact";
 game.ABOUT_US_ANCHOR_TAG = "about_us";
 
-game.LEFT_NUMBERS = [1,2,4,5,8,10];
-game.RIGHT_NUMBERS = [1,2,3,4,5,6,7,8,9,10];
 
 game.i18n.languages = {
     "en": {

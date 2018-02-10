@@ -40,3 +40,9 @@
     text-align: center;
     font-size: 56px;
 }
+
+.history-image {
+    background-image: url(../images/Dani.jpg);
+    border-radius: 1.9em;
+    background-size: 200%;
+}
