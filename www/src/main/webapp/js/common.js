@@ -3,6 +3,9 @@ var game = game || {};
 game.CONTACT_ANCHOR_TAG = "contact";
 game.ABOUT_US_ANCHOR_TAG = "about_us";
 
+game.LEFT_NUMBERS = [1,2,4,5,8,10];
+game.RIGHT_NUMBERS = [1,2,3,4,5,6,7,8,9,10];
+
 game.i18n.languages = {
     "en": {
         name : "English"
@@ -44,12 +47,12 @@ game.getAdaptedCurrentPath = function(langId) {
     return window.location.pathname.replace("/" + game.getCurrentLangId() + "/", "/" + langId + "/");
 };
 
-game.createHeader = function() {
+game.createHeader = function(title) {
 
     return $('<div class="row header"></div>')
         .append($('<div class="col-xs-4 col-md-5"></div>'))
         .append($('<div class="col-xs-4 col-md-2 logo"></div>')
-            .append($('<div><div></div></div>'))
+            .append(title)
         )
         .append($('<div class="col-xs-4 col-md-2"></div>')
             .append(game.createLanguageChooser())
@@ -107,7 +110,7 @@ game.createAnchor = function(name) {
 
 };
 
-game.createGeneralDescription = function(content) {
+game.createCenteredContent = function(content) {
 
     return $('<div class="row"></div>')
         .append($('<div class="col-md-3"></div>'))

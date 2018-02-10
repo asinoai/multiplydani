@@ -22,8 +22,10 @@
     <script src="../js/index.js" type="text/javascript"></script>
     <script type="text/javascript">
         $("#mainDiv")
-            .append(game.createHeader(game.i18n.course1Title, game.i18n.course1SubTitle))
-            .append(game.createGeneralDescription(game.i18n.aboutUsDescription));
+            .append(game.createHeader(game.i18n.title))
+            .append(game.createQuestionBar())
+            .append(game.createNumbersBar())
+        ;
 
         $(function () {
 
