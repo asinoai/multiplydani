@@ -1,14 +1,13 @@
 var helloit = game || {};
 
-game.createQuestionBar = function () {
+game.createQuestionAnswerBar = function () {
     var content = game.createQuestion();
 
-    return game.createCenteredTwoPieceContent(content, $('<div class="ok">✓</div>'));
+    return game.createCenteredContent(content);
 }
 
 game.createQuestion = function() {
-
-    var result = $('<div><div class="question"></div><div>=</div><div class="answer"></div></div>');
+    var result = $('<div><div class="question"></div><div>=</div><div class="answer"></div><div class="ok">✓</div></div>');
 
     return result;
 }
@@ -42,7 +41,10 @@ game.createNumber = function(value) {
 }
 
 game.createMessageBar = function() {
-    return $('<div class="message"></div>')
+    var content = $('<div class="message"></div>');
+
+    return game.createCenteredContent(content);
+
 }
 
 game.updateWithAnswerDigit = function(digit) {
@@ -91,7 +93,16 @@ game.checkAnswer = function () {
 
     game.updateMessage(ok ? game.i18n.successMessage : game.i18n.failureMessage);
 
-    window.setTimeout(game.nextQuestion, 2000);
+    if (ok) {
+        window.setTimeout(game.nextQuestion, 2000);
+    }
+    else {
+        answer.fadeOut('slow', function() {
+            game.updateAnswer(game.expectedAnswer);
+            answer.fadeIn();
+            window.setTimeout(game.nextQuestion, 5000);
+        });
+    }
 }
 
 
