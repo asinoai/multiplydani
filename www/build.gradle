@@ -1,0 +1,10 @@
+apply plugin: 'application'
+
+/*
+task copyWebFiles(type: Copy) {
+    from 'src/web'             // source directory
+    into '../path/to/htdocs'   // target directory
+}
+
+preBuild.dependsOn copyWebFiles  // execute task before build
+*/
