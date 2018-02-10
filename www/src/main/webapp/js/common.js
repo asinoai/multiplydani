@@ -119,3 +119,15 @@ game.createCenteredContent = function(content) {
         .append($('<div class="col-md-3"></div>'));
 
 };
+
+game.createCenteredTwoPieceContent = function(left, right) {
+
+    return $('<div class="row"></div>')
+        .append($('<div class="col-md-3"></div>'))
+        .append($('<div class="col-md-5"></div>')
+            .append(left))
+        .append($('<div class="col-md-1"></div>')
+            .append(right))
+        .append($('<div class="col-md-3"></div>'));
+
+};

@@ -1,8 +1,8 @@
 var game = game || {};
 
 game.i18n = {
-    title : "Szorzótábla játék",
-    aboutUsDescription : $('<div class="contentheader1">?</div>\
-        ')
+    title : "X ?",
+    successMessage : "Ügyes vagy Dani! :)",
+    failureMessage : "Sajnos ez nem jo... :("
 
 };

@@ -18,7 +18,7 @@ body {
 
 .logo {
     padding-top: 30px;
-    font-size: 30px;
+    font-size: 60px;
 }
 
 .logo div {
@@ -231,8 +231,10 @@ body {
 }
 
 .number div {
-    display: inherit;
-}
+    display: block;
+    height: 55px;
+    width: 55px;
+    padding-top: 13px;}
 
 .question {
     font-size: 24px;

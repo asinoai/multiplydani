@@ -1,86 +1,42 @@
 
-
-.contact {
-    background-color: #121214;
-    padding-bottom: 30px;
-    margin-top: 20px;
-}
-
-.contact .contentheader2 {
-    color: #ffffff;
-}
-
-.contact input {
-    width: 250px;
-    height: 50px;
-    border-radius: 4px;
-    background-color: rgba(256, 256, 256, 0.1);
-    margin-top: 40px;
-    opacity: 0.6;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.88;
-    color: #ffffff;
-    border: none;
-    padding-left: 20px;
-}
-
-.contact label {
-    width: 250px;
-    /*height: 50px;*/
-    border-radius: 4px;
-    background-color: rgba(256, 256, 256, 0.1);
-    margin-top: 40px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #ff6000;
-    border: none;
-    padding-left: 20px;
-    /*vertical-align: middle;*/
-    line-height: 50px;
-}
-
-#register-slider {
-    width: 250px;
-    height: 50px;
-    overflow: hidden;
-}
-
-#register-slider > div {
-    width: 500px;
-    height: 50px;
-    margin-left: -250px;
-    -webkit-transition: 0.4s; /* For Safari 3.1 to 6.0 */
-    -moz-transition: 0.4s;
-    -ms-transition: 0.4s; /* IE 9 */
-    -o-transition: 0.4s;
-    transition: 0.4s;
-    -webkit-transition-delay: 0s; /* For Safari 3.1 to 6.0 */
-}
-.register-slided > div {
-    margin-left: 0 !important;
-}
-
-#register-slider > div > div {
-    width: 250px;
-    height: 50px;
-    display: inline-block;
-    color: #ff6000;
-}
-
-#register-slider span {
-    margin-left: 20px;
-}
-
-#register-slider button {
-    width: 250px;
-    height: 50px;
-    border-radius: 4px;
-    background-color: #ff6000;
-    border: none;
+.number {
+    height: 55px;
+    width: 55px;
+    border: 0 solid;
+    background-color: rgba(18, 18, 20, 0.2);
+    border-radius: 0.9em;
     outline: none;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1px;
 }
 
-.contact form > * {
-    margin-right: 14px;
+.number div {
+    display: block;
+    height: 55px;
+    width: 55px;
+    padding-top: 13px;
+}
+
+.question {
+    font-size: 24px;
+    font-weight: 400;
+    color: #ff6000;
+    margin-top: 54px;
+}
+
+.answer {
+    font-size: 56px;
+}
+
+.ok {
+    height: 85px;
+    width: 55px;
+    border: 0 solid;
+    background-color: #ec971f;
+    border-radius: 0.9em;
+    outline: none;
+    text-align: center;
+    font-size: 56px;
 }
