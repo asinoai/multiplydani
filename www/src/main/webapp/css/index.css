@@ -10,6 +10,7 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 1px;
+    cursor: pointer;
 }
 
 .number div {
@@ -39,6 +40,12 @@
     outline: none;
     text-align: center;
     font-size: 56px;
+    cursor: pointer;
+}
+
+.ok.disabled {
+    pointer-events: none;
+    background-color: transparent;
 }
 
 .history-image {

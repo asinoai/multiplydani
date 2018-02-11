@@ -125,7 +125,6 @@ game.checkAnswer = function () {
     else {
         answer.fadeOut('slow', function() {
             game.updateAnswer(game.expectedAnswer);
-            game.expectedAnswer = null;
             answer.fadeIn();
             window.setTimeout(game.nextQuestion, 5000);
         });
@@ -141,7 +140,9 @@ game.nextQuestion = function () {
         game.updateAnswer("");
         game.updateMessage("");
         game.randomQuestion();
-        root.fadeIn();
+        root.fadeIn('slow', function () {
+            $(".ok").removeClass("disabled");
+        });
     });
 }
 
@@ -152,7 +153,13 @@ $(function () {
         game.updateWithAnswerDigit(event.target.firstChild.nodeValue);
     });
 
-    $(".ok").click(function () {
-       game.checkAnswer();
+    $(document).bind("contextmenu", function (event) {
+        event.preventDefault();
+    });
+
+    var okButton = $(".ok");
+    okButton.click(function () {
+        okButton.addClass("disabled");
+        game.checkAnswer();
     });
 });
